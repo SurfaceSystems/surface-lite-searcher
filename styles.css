@@ -1,0 +1,27 @@
+body.main {
+    font-family: Haettenschweiler, 'Arial Narrow', sans-serif;
+}
+body.main h1::first-letter { color: darkgreen; }
+body.main {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+body.main input {
+    border-radius: 21.5px;
+    padding:6px;
+}
+
+
+body.search div span::first-letter { color: darkgreen; }
+body.search div input {
+    border-radius: 21.5px;
+    padding:6px;
+    display: inline;
+    width: 87.20%;
+}
+
+body.search #searchs div * {
+    margin:3px;
+}
