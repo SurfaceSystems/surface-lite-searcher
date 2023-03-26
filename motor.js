@@ -38,6 +38,31 @@ let searchs = [
         "Comments":"Unico sistema operativo que no está hecho en españa, descargar y probar.",
         "URL":"https://litech.w3spaces.com/lite-catos.html",
         "Ad":false
+    }, {
+        "Title":"EducaMadrid Inicio",
+        "Comments":"Herramientas de uso educativo para madrid.",
+        "URL":"https://www.educa2.madrid.org/educamadrid/",
+        "Ad":false
+    }, {
+        "Title":"EducaMadrid - Buscador de aulas virtuales",
+        "Comments":"Buscar aulas virtuales de colegios de madrid",
+        "URL":"https://www.educa2.madrid.org/educamadrid/aula-virtual",
+        "Ad":false
+    }, {
+        "Title":"EducaMadrid - Correo",
+        "Comments":"Usar el correo de educamadrid",
+        "URL":"https://correoweb.educa.madrid.org/",
+        "Ad":false
+    }, {
+        "Title":"EducaMadrid - Cloud",
+        "Comments":"Cloud educamadrid para guardar archivos",
+        "URL":"https://cloud.educa.madrid.org/index.php/login",
+        "Ad":false
+    }, {
+        "Title":"Madread",
+        "Comments":"Libros digitales para usuarios de educamadrid",
+        "URL":"https://madread.educa.madrid.org/",
+        "Ad":false
     }
 ];
 
@@ -46,9 +71,16 @@ search(searcah);
 function search(saearch) {
     
 let start = Date.now();
+if(searcah == "@all") {
     searchs.forEach(saearchs => {
-        if(saearchs.Title.includes(saearch) || saearchs.Comments.includes(saearch)) {
-                document.querySelector("#searchs").innerHTML += "<div><h1>" + saearchs.Title + "</h1><p>" + saearchs.Comments + "</p><a href='" + saearchs.URL + "'>" + saearchs.URL + "</a>";
+                document.querySelector("#searchs").innerHTML += "<div><h2>" + saearchs.Title + "</h1><p>" + saearchs.Comments + "</p><a href='" + saearchs.URL + "'>" + saearchs.URL + "</a>";
+            res++;
+        
+    });
+} else {
+    searchs.forEach(saearchs => {
+        if(saearchs.Title.toUpperCase().includes(saearch) || saearchs.Title.includes(saearch) || saearchs.Comments.toUpperCase().includes(saearch) || saearchs.Comments.includes(saearch)) {
+                document.querySelector("#searchs").innerHTML += "<div><h2>" + saearchs.Title + "</h1><p>" + saearchs.Comments + "</p><a href='" + saearchs.URL + "'>" + saearchs.URL + "</a>";
             res++;
         } else {
             max++;
@@ -57,7 +89,7 @@ let start = Date.now();
     if(max == searchs.length) {
         document.querySelector("#searchs").innerHTML = "<h4>Ningún enlace coincide con tu búsqueda</h4>";
     }
-    
+}
 let timeTaken = Date.now() - start;
 document.querySelector("#searchs").innerHTML = "<p>Se han encontrado " + res + " resultados en " + timeTaken + " milisegundo(s)." + document.querySelector("#searchs").innerHTML;
 }
