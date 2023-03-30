@@ -1,5 +1,5 @@
 body.main {
-    font-family: Haettenschweiler, 'Arial Narrow', sans-serif;
+    font-family: sans-serif;
 }
 body.main h1::first-letter { color: darkgreen; }
 body.main {
