@@ -1,6 +1,7 @@
 body.main {
     font-family: sans-serif;
 }
+body.main * {text-align:center} 
 body.main h1::first-letter { color: darkgreen; }
 body.main {
     position: absolute;
